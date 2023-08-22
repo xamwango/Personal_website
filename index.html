@@ -1,59 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>Personal_Website</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300%7CCinzel+Decorative:700" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300%7CCinzel+Decorative:700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <!--the header of the page-->
-    <header> 
-      <h1>Samuel Wango</h1>
-      
-    </header>
-      <!--the navegation bar/menu-->
-    <nav>
-      <ul>
-        
-        <li><a href="education.html">Education</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-      
-    <main style="text-align: center;">
+    <!-- Header -->
+    <div class="header">
+      <h1>SAMUEL WANGO</h1>
+    </div>
 
-      <article>
-        <h2>Welcome To My Website</h2>
-        <figure>
-          <img src="images/ProfilePictureSam.png" alt="profile picture" width="400">
-          <span><figcaption>Software Engineer | Web Developer | IT Specialist </figcaption></span>
-          
-        </figure>
-      </article>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <a href="education.html">Education</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-      <aside style="text-align: center;">
+    <!-- The flexible grid (content) -->
+    <div class="row">
+      <div class="main">
+        <img
+          src="images/ProfilePictureSam.png"
+          alt="profile picture"
+          id="profile"
+        />
+        <div class="image_side">
+          <h2>Welcome to my Website</h2>
+          <br />
+          <br />
+          <p>Software Engineer</p>
+          <br />
+          <br />
+          <p>Web Developer</p>
+          <br />
+          <br />
+          <p>IT Specialist</p>
+          <br />
+          <br />
+          <br />
+          <p>
+            <i
+              ><b>Quality</b> is <b>key</b> and it always makes the
+              <b>different</b></i
+            >
+          </p>
+        </div>
+
+        <br />
+      </div>
+      <div class="home-side">
         <h2>Social Pages</h2>
-        <ul style="display: inline-block;">
-          <li><a href="https://github.com/xamwango?tab=repositories">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/samuel-wango-12046010a/">LinkedIN</a></li>
+
+        <ul>
+          <li>
+            <a href="https://github.com/xamwango?tab=repositories">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/samuel-wango-12046010a/"
+              >LinkedIN</a
+            >
+          </li>
           <li><a href="https://twitter.com/xamwango">Twitter</a></li>
           <li><a href="https://www.instagram.com/xam_wango/?hl=en">IG</a></li>
         </ul>
-      </aside>
+      </div>
+    </div>
 
-    </main>
-    <!-- <footer>
-      <address>
-
-      </address>
-    </footer> -->
+    <!-- Footer -->
+    <div class="footer">
+      <h2></h2>
+      <p>
+        <i
+          >Always committed to serving you <b></b>100%, because your
+          <b>Success</b> is my <b>Success</b></i
+        >
+      </p>
+      <p>
+        <i
+          ><b>Thank you</b> for always choosing to do <b>business with me</b></i
+        >
+      </p>
+    </div>
   </body>
 </html>
