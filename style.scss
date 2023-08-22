@@ -1,0 +1,138 @@
+$primary-l-style: none;
+
+// styling the links
+%links-styling {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: $primary-l-style;
+  text-align: center;
+}
+
+// Styling main column
+@mixin main-styling {
+  background-color: rgba(0, 225, 255, 0.5);
+  padding: 20px;
+}
+
+// styling the sides
+@mixin side-styling {
+  flex: 30%;
+  background-color: #a22ff0;
+  padding: 10px;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* Style the body */
+  font-family: Arial;
+  margin: 0;
+
+  /* Header/logo Title */
+  .header {
+    font-family: "Cinzel Decorative", cursive;
+    text-shadow: 2px 2px 10px black;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    height: 80px;
+    padding: 1px;
+  }
+
+  /* Style the top navigation bar */
+  .navbar {
+    display: flex;
+    background-color: #333;
+    /* Style the navigation bar links */
+    a {
+      @extend %links-styling;
+    }
+    /* Change color on hover */
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  }
+  /* Column container */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Sidebar/right column */
+    .side {
+      @include side-styling();
+      /* ul in the .side */
+      ul {
+        list-style-type: $primary-l-style;
+        display: inline-block;
+      }
+    }
+
+    /* Sidebar class home-side/right column */
+    .home-side {
+      /* li in .home-side */
+      @include side-styling();
+      li {
+        margin-bottom: 70px;
+      }
+      // On hover
+      li :hover {
+        color: rgb(248, 232, 7);
+        text-decoration: underline;
+      }
+      a {
+        @extend %links-styling;
+      }
+    }
+    /* Main column */
+    .main {
+      @include main-styling();
+      flex: 70%;
+
+      // aligning the articles
+      .center {
+        text-align: center;
+      }
+
+      // Paragraph columns
+      .column {
+        column-count: 2;
+      }
+
+      /* Home page image */
+      #profile {
+        width: "250";
+        float: left;
+        margin-right: 20px;
+        border-radius: 50%;
+      }
+      /* text beside #profile */
+      .image_side {
+        padding: 50;
+      }
+      /* contact page list */
+      ul {
+        list-style-type: $primary-l-style;
+        display: inline-block;
+      }
+    }
+  }
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+  }
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row,
+  .navbar {
+    flex-direction: column;
+  }
+  .column {
+    column-count: initial;
+    column-width: 100%;
+  }
+}
