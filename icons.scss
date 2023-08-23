@@ -1,0 +1,63 @@
+$primary-color: white;
+
+@mixin awesome-icon {
+  font-size: 40px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+// styling the form button in contact page
+.button {
+  background-color: teal;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  text-align: center;
+  color: $primary-color;
+}
+
+// styling github icon
+.fa-github {
+  background: #7f7c81;
+  color: $primary-color;
+  @include awesome-icon();
+}
+
+// stying instagram icon
+.fa-instagram {
+  background: linear-gradient(
+    -145deg,
+    #4f5bd5,
+    #962fbf,
+    #d62976,
+    #fa7e1e,
+    #feda75
+  );
+  color: $primary-color;
+  @include awesome-icon();
+}
+
+// styling twitter icon
+.fa-twitter {
+  background: #1da1f2;
+  color: $primary-color;
+  @include awesome-icon();
+}
+
+// styling linkedin icon
+.fa-linkedin-in {
+  background: #007bb5;
+  color: $primary-color;
+  @include awesome-icon();
+}
+
+// styling paper-plane icon
+.fa-paper-plane {
+  color: $primary-color;
+}
+
+// styling whatsApp icon
+.fa-whatsapp {
+  background: #25d366;
+  color: $primary-color;
+}

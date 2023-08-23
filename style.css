@@ -46,10 +46,14 @@ body {
         list-style-type: none;
         display: inline-block; }
     body .row .home-side {
+      /* ul in the .side */
       /* li in .home-side */
       flex: 30%;
       background-color: #a22ff0;
       padding: 10px; }
+      body .row .home-side ul {
+        list-style-type: none;
+        display: inline-block; }
       body .row .home-side li {
         margin-bottom: 70px; }
       body .row .home-side li :hover {
