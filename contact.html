@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Contact</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300%7CCinzel+Decorative:700"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Header -->
     <div class="header">
@@ -25,47 +27,78 @@
     </div>
 
     <!-- The flexible grid (content) -->
-    <div class="row">
-      <div class="main">
-        <article class="center">
-          <h2>Contact Details</h2>
-          <address>
-            <p>
-              Samuel Mburu Wango,<br /><br />
-              Nairobi,<br />
-              <br />
-              Kenya.
-            </p>
+    <div class="w3-row" id="contact">
+      <div
+        class="w3-half w3-dark-grey w3-container w3-center"
+        style="height: 700px"
+      >
+        <div class="w3-padding-64">
+          <h1>Contact Details</h1>
+        </div>
+        <div>
+          <p>Samuel Mburu Wango,</p>
+          <p>Nairobi,</p>
+          <p>Kenya.</p>
 
-            <p>
-              P.O. BOX 388-00216, <br /><br />
-              Githunguri, <br /><br />
-              Kiambu.
-            </p>
+          <p>P.O. BOX 388-00216,</p>
+          <p>Githunguri,</p>
+          <p>Kiambu.</p>
 
-            <ul>
-              <li>Mobile: +254768804670</li>
-              <li>Whats App: +254719551826</li>
-              <li>
-                Email(s):
-                <ul>
-                  <li>
-                    <a href="mailto:xamwango@gmail.com">xamwango@gmail.com</a>
-                  </li>
-                  <li>
-                    <a href="mailto:swango@aims.edu.gh">swango@aims.edu.gh</a>
-                  </li>
-                  <li>
-                    <a href="mailto:babieface184@gmail.com"
-                      >babieface184@gmail.com</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </address>
-        </article>
-        <br />
+          <p>Mobile: +254768804670</p>
+          <p>Whats App: +254719551826</p>
+
+          <p>Email(s):</p>
+          <p><a href="mailto:xamwango@gmail.com">xamwango@gmail.com</a></p>
+          <p><a href="mailto:swango@aims.edu.gh">swango@aims.edu.gh</a></p>
+          <p>
+            <a href="mailto:babieface184@gmail.com">babieface184@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="w3-half w3-teal w3-container" style="height: 700px">
+        <div class="w3-padding-64 w3-padding-large">
+          <h1>Contact</h1>
+          <p class="w3-opacity">GET IN TOUCH</p>
+          <form
+            class="w3-container w3-card w3-padding-32 w3-white"
+            action="/action_page.php"
+            target="_blank"
+          >
+            <div class="w3-section">
+              <label>Name</label>
+              <input
+                class="w3-input"
+                style="width: 100%"
+                type="text"
+                required
+                name="Name"
+              />
+            </div>
+            <div class="w3-section">
+              <label>Email</label>
+              <input
+                class="w3-input"
+                style="width: 100%"
+                type="text"
+                required
+                name="Email"
+              />
+            </div>
+            <div class="w3-section">
+              <label>Message</label>
+              <input
+                class="w3-input"
+                style="width: 100%"
+                type="text"
+                required
+                name="Message"
+              />
+            </div>
+            <button type="submit" class="w3-button w3-teal w3-right">
+              Send
+            </button>
+          </form>
+        </div>
       </div>
     </div>
 
