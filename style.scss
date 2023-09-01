@@ -20,124 +20,235 @@ $primary-l-style: none;
   background-color: #a22ff0;
   padding: 10px;
 }
+
+/* Footer */
+@mixin footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+// Header
+@mixin header {
+  font-family: "Cinzel Decorative", cursive;
+  text-shadow: 2px 2px 10px black;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  height: 80px;
+  padding: 1px;
+}
+
+// navbar
+@mixin navbar {
+  display: flex;
+  background-color: #333;
+  /* Style the navigation bar links */
+  a {
+    @extend %links-styling;
+  }
+  /* Change color on hover */
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+// body styling
+@mixin body-styling {
+  font-family: Arial;
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  /* Style the body */
-  font-family: Arial;
-  margin: 0;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
 
+// Home page styling
+
+.home-page-container {
+  /* Style the body */
+  @include body-styling();
   /* Header/logo Title */
-  .header {
-    font-family: "Cinzel Decorative", cursive;
-    text-shadow: 2px 2px 10px black;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    height: 80px;
-    padding: 1px;
+  &-header {
+    @include header();
+  }
+  /* Style the top navigation bar */
+  &-navbar {
+    @include navbar();
+  }
+  /* Main column */
+  &-main {
+    @include main-styling();
+    flex: 70%;
+
+    /* Home page image */
+    #profile {
+      width: "250";
+      float: left;
+      margin-right: 20px;
+      border-radius: 50%;
+    }
+    /* text beside #profile */
+    .image_side {
+      padding: 50;
+    }
   }
 
-  /* Style the top navigation bar */
-  .navbar {
-    display: flex;
-    background-color: #333;
-    /* Style the navigation bar links */
+  /* Sidebar class home-side/right column */
+  &-side {
+    /* ul in the .side */
+    ul {
+      list-style-type: $primary-l-style;
+      display: inline-block;
+    }
+    /* li in .home-side */
+    @include side-styling();
+    li {
+      margin-bottom: 70px;
+    }
+    // On hover
+    li :hover {
+      color: rgb(248, 232, 7);
+      text-decoration: underline;
+    }
     a {
       @extend %links-styling;
     }
-    /* Change color on hover */
-    a:hover {
-      background-color: #ddd;
-      color: black;
-    }
   }
-  /* Column container */
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    /* Sidebar/right column */
-    .side {
-      @include side-styling();
-      /* ul in the .side */
-      ul {
-        list-style-type: $primary-l-style;
-        display: inline-block;
-      }
-    }
+  &-footer {
+    @include footer();
+  }
+}
 
-    /* Sidebar class home-side/right column */
-    .home-side {
-      /* ul in the .side */
-      ul {
-        list-style-type: $primary-l-style;
-        display: inline-block;
-      }
-      /* li in .home-side */
-      @include side-styling();
-      li {
-        margin-bottom: 70px;
-      }
-      // On hover
-      li :hover {
-        color: rgb(248, 232, 7);
-        text-decoration: underline;
-      }
-      a {
-        @extend %links-styling;
-      }
-    }
-    /* Main column */
-    .main {
-      @include main-styling();
-      flex: 70%;
+//Portfolio page styling
 
-      // aligning the articles
-      .center {
-        text-align: center;
-      }
+.portfolio-page-container {
+  // style body
+  @include body-styling();
+  // style header
+  &-header {
+    @include header();
+  }
+  //   style the navbar
+  &-navbar {
+    @include navbar();
+  }
+  // style te main column
+  &-main {
+    @include main-styling();
+    flex: 70%;
 
-      // Paragraph columns
-      .column {
-        column-count: 2;
-      }
-
-      /* Home page image */
-      #profile {
-        width: "250";
-        float: left;
-        margin-right: 20px;
-        border-radius: 50%;
-      }
-      /* text beside #profile */
-      .image_side {
-        padding: 50;
-      }
-      /* contact page list */
-      ul {
-        list-style-type: $primary-l-style;
-        display: inline-block;
+    // Paragraph columns
+    .column {
+      column-count: 2;
+      @media only screen and (max-width: 768px) {
+        column-count: 1;
       }
     }
   }
-  /* Footer */
-  .footer {
-    padding: 20px;
+  //   styling the side
+  &-side {
+    @include side-styling();
+    /* ul in the .side */
+    ul {
+      list-style-type: $primary-l-style;
+      display: inline-block;
+    }
+  }
+  //   style footer
+  &-footer {
+    @include footer();
+  }
+}
+
+//about page styling
+.about-page-container {
+  // body styling
+  @include body-styling();
+  // Header
+  &-header {
+    @include header();
+  }
+  // navbar
+  &-navbar {
+    @include navbar();
+  }
+  &-main {
+    @include main-styling();
+    flex: 70%;
+  }
+  &-side {
+    @include side-styling();
+    /* ul in the .side */
+  }
+  //
+  &-footer {
+    @include footer();
+  }
+}
+
+// contact page styling
+
+.contact-page-container {
+  // styling the body
+  @include body-styling();
+  //header
+  &-header {
+    @include header();
+  }
+  //Navbar
+  &-navbar {
+    @include navbar();
+  }
+
+  //footer
+  &-footer {
+    @include footer();
+  }
+}
+
+// education page styling
+
+.education-page-container {
+  // body styling
+  @include body-styling();
+  //header
+  &-header {
+    @include header();
+  }
+  //navbar
+  &-navbar {
+    @include navbar();
+  }
+  //
+  &-main {
+    @include main-styling();
+    flex: 100%;
     text-align: center;
-    background: #ddd;
+
+    // aligning the articles
+    .center {
+      text-align: center;
+    }
+  }
+  //footer
+  &-footer {
+    @include footer();
   }
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row,
-  .navbar {
+@media screen and (max-width: 768px) {
+  .flex-container {
     flex-direction: column;
-  }
-  .column {
-    column-count: initial;
-    column-width: 100%;
   }
 }
