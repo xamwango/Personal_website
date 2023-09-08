@@ -22,41 +22,81 @@
 
     <!-- Navigation Bar -->
     <div class="about-page-container-navbar">
-      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="education.html"><i class="fa-solid fa-graduation-cap"></i> Education</a>
-      <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a>
-      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <div class="about-page-container-navbar-toLeft">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="education.html"
+          ><i class="fa-solid fa-graduation-cap"></i> Education</a
+        >
+        <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+      <div class="home-page-container-navbar-toRight">
+        <div>
+          <select name="theme" id="theme">
+            <option value="default">Page Default</option>
+            <option value="light">Light</option>
+            <option value="mild">Mild</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <!-- The flexible grid (content) -->
     <div class="flex-container">
-      <div class="about-page-container-main" style="padding-top: 100px;">
-        
-          <p><b>HI THERE</b> </p>
-  
-          <P>I'm Samuel, a self-driven, efficient and self-motivated individual. I am passionate about computer science and web tech and that always comes across in the quality of my work. I always do my best to meet clients' expectations and deadlines. I believe in creating original, innovative, and optimum solutions that suites your demands and are functional based on your needs.
-            <ul>
-              <li>I'm a developer with experience building websites for small and medium-sized businesses.</li>
-              <li>I'm experienced in LATEX, Python, HTML5, CSS3, PHP, JavaScript, Java, Python, Git, WordPress, C/C++, GUI Design, Web Development, Web Scraping, Microsoft Oﬃce, Windows, Linux, Software installation and computer maintenance.</li>
-              <li>Perform code reviews in the specified above</li>
-              <li>Regular communication(feedback) is important to ensure I deliver as expected.</li>
-            </ul>
-            <p>*I look forward to having a detailed conversation about your project together.</p>
-            Last updated: Aug 21, 2023</P>
-        
-        <br />
+      <div
+        class="about-page-container-main"
+        style="padding-top: 100px; color: rgb(230, 222, 231)"
+      >
+        <p><b>HI THERE</b></p>
+
+        <p>
+          I'm Samuel, a self-driven, efficient and self-motivated individual. I
+          am passionate about computer science and web tech and that always
+          comes across in the quality of my work. I always do my best to meet
+          clients' expectations and deadlines. I believe in creating original,
+          innovative, and optimum solutions that suites your demands and are
+          functional based on your needs.
+        </p>
+        <ul>
+          <li>
+            I'm a developer with experience building websites for small and
+            medium-sized businesses.
+          </li>
+          <li>
+            I'm experienced in LATEX, Python, HTML5, CSS3, PHP, JavaScript,
+            Java, Python, Git, WordPress, C/C++, GUI Design, Web Development,
+            Web Scraping, Microsoft Oﬃce, Windows, Linux, Software installation
+            and computer maintenance.
+          </li>
+          <li>Perform code reviews in the specified above</li>
+          <li>
+            Regular communication(feedback) is important to ensure I deliver as
+            expected.
+          </li>
+        </ul>
+        <p>
+          *I look forward to having a detailed conversation about your project
+          together.
+        </p>
+        <p>Last updated: Aug 21, 2023</p>
       </div>
       <div class="about-page-container-side">
         <aside>
-          <img src="images/humility_motivation.jpeg" style="padding-left: 60px;" width="90%" title="Humility and Nobility" alt="A motivational message for one to remain humble and accomodate the ideas of others">
+          <img
+            src="images/humility_motivation.jpeg"
+            style="padding-left: 60px"
+            width="90%"
+            title="Humility and Nobility"
+            alt="A motivational message for one to remain humble and accomodate the ideas of others"
+          />
           <!-- <img src="images/personal_message.jpg" width="60%"  title="Personal message" alt="A personal statement about my vision and mission"> -->
-  
         </aside>
       </div>
     </div>
 
     <!-- Footer -->
-    <div class="about-page-container-footer">
+    <div class="about-page-container-footer" style="color: rgb(8, 8, 95)">
       <h2></h2>
       <p>
         <i
@@ -70,5 +110,54 @@
         >
       </p>
     </div>
+
+    <!-- Script -->
+    <script>
+      const theme = document.querySelector("#theme");
+      const headert = document.querySelector(".about-page-container-header");
+      const header = document.querySelector(".about-page-container-navbar");
+      const main = document.querySelector(".about-page-container-main");
+      const side = document.querySelector(".about-page-container-side");
+      const footer = document.querySelector(".about-page-container-footer");
+
+      theme.addEventListener("change", (event) => {
+        if (event.target.value === "default") {
+          console.log("Page default theme");
+          theme.style.backgroundColor = "#333";
+          headert.style.backgroundColor = "#306b5f";
+          header.style.backgroundColor = "#333";
+          main.style.backgroundColor = "rgba(24, 73, 80, 0.904)";
+          side.style.backgroundColor = "#1e1d31";
+          footer.style.backgroundColor = "#ddd";
+        } else if (event.target.value === "light") {
+          console.log("Light theme");
+          // document.body.style.backgroundColor = "white";
+          theme.style.backgroundColor = "darkgrey";
+          headert.style.backgroundColor = "darkgrey";
+          header.style.backgroundColor = "darkgrey";
+          main.style.backgroundColor = "darkgrey";
+          side.style.backgroundColor = "darkgrey";
+          footer.style.backgroundColor = "darkgrey";
+        } else if (event.target.value === "mild") {
+          console.log("Mild theme");
+          // document.body.style.backgroundColor = "#a89999";
+          theme.style.backgroundColor = "#a89999";
+          headert.style.backgroundColor = "#a89999";
+          header.style.backgroundColor = "#a89999";
+          main.style.backgroundColor = "#a89999";
+          side.style.backgroundColor = "#a89999";
+          footer.style.backgroundColor = "#a89999";
+        } else {
+          console.log("Dark theme");
+          // document.body.style.backgroundColor = "black";
+          theme.style.backgroundColor = "black";
+          headert.style.backgroundColor = "black";
+          header.style.backgroundColor = "black";
+          main.style.backgroundColor = "black";
+          side.style.backgroundColor = "black";
+          footer.style.backgroundColor = "black";
+        }
+      });
+    </script>
   </body>
 </html>

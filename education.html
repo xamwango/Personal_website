@@ -22,18 +22,33 @@
 
     <!-- Navigation Bar -->
     <div class="education-page-container-navbar">
-      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-      <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a>
-      <a href="about.html"><i class="fa-solid fa-user"></i> About</a>
-      <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      <div class="education-page-container-navbar-toLeft">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a>
+        <a href="about.html"><i class="fa-solid fa-user"></i> About</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+      <div class="education-page-container-navbar-toRight">
+        <div>
+          <select name="theme" id="theme">
+            <option value="default">Page Default</option>
+            <option value="light">Light</option>
+            <option value="mild">Mild</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <!-- The flexible grid (content) -->
-    <div class="flex-container">
-      <div class="home-page-container-main">
+    <div class="flex-container" style="height: 100vh">
+      <div
+        class="education-page-container-main"
+        style="color: rgb(230, 222, 231)"
+      >
         <!-- <h2>TITLE HEADING</h2> -->
         <center>
-          <article class="center">
+          <article class="center" style="margin-top: 100px">
             <em><h2>Masters Degree(2018-2019)</h2></em>
             <p>
               <a href="https://aims.edu.gh/"
@@ -70,7 +85,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="education-page-container-footer">
+    <div class="education-page-container-footer" style="color: rgb(8, 8, 95)">
       <h2></h2>
       <p>
         <i
@@ -84,5 +99,51 @@
         >
       </p>
     </div>
+
+    <!-- Script -->
+    <script>
+      const theme = document.querySelector("#theme");
+      const headert = document.querySelector(
+        ".education-page-container-header"
+      );
+      const header = document.querySelector(".education-page-container-navbar");
+      const main = document.querySelector(".education-page-container-main");
+      const footer = document.querySelector(".education-page-container-footer");
+
+      theme.addEventListener("change", (event) => {
+        if (event.target.value === "default") {
+          console.log("Page default theme");
+          theme.style.backgroundColor = "#333";
+          headert.style.backgroundColor = "#306b5f";
+          header.style.backgroundColor = "#333";
+          main.style.backgroundColor = "rgba(24, 73, 80, 0.904)";
+          footer.style.backgroundColor = "#ddd";
+        } else if (event.target.value === "light") {
+          console.log("Light theme");
+          // document.body.style.backgroundColor = "white";
+          theme.style.backgroundColor = "darkgrey";
+          headert.style.backgroundColor = "darkgrey";
+          header.style.backgroundColor = "darkgrey";
+          main.style.backgroundColor = "darkgrey";
+          footer.style.backgroundColor = "darkgrey";
+        } else if (event.target.value === "mild") {
+          console.log("Mild theme");
+          // document.body.style.backgroundColor = "#a89999";
+          theme.style.backgroundColor = "#a89999";
+          headert.style.backgroundColor = "#a89999";
+          header.style.backgroundColor = "#a89999";
+          main.style.backgroundColor = "#a89999";
+          footer.style.backgroundColor = "#a89999";
+        } else {
+          console.log("Dark theme");
+          // document.body.style.backgroundColor = "black";
+          theme.style.backgroundColor = "black";
+          headert.style.backgroundColor = "black";
+          header.style.backgroundColor = "black";
+          main.style.backgroundColor = "black";
+          footer.style.backgroundColor = "black";
+        }
+      });
+    </script>
   </body>
 </html>
