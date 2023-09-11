@@ -1,4 +1,6 @@
 $primary-l-style: none;
+$left-flex: 90%;
+$right-flex: 10%;
 
 // styling the links
 %links-styling {
@@ -12,7 +14,6 @@ $primary-l-style: none;
 %theme {
   color: white;
   padding: 12px 2px;
-  text-decoration: $primary-l-style;
   text-align: center;
 }
 
@@ -94,12 +95,17 @@ $primary-l-style: none;
     @include navbar();
     &-toLeft {
       display: flex;
-      flex: 95%;
+      flex: $left-flex;
     }
     &-toRight {
       display: flex;
-      flex: 5%;
+      flex: $right-flex;
       #theme {
+        @extend %theme;
+        border: none;
+        background-color: #333;
+      }
+      #toggleOption {
         @extend %theme;
         border: none;
         background-color: #333;
@@ -164,12 +170,17 @@ $primary-l-style: none;
     @include navbar();
     &-toLeft {
       display: flex;
-      flex: 95%;
+      flex: $left-flex;
     }
     &-toRight {
       display: flex;
-      flex: 5%;
+      flex: $right-flex;
       #theme {
+        @extend %theme;
+        border: none;
+        background-color: #333;
+      }
+      #toggleOption {
         @extend %theme;
         border: none;
         background-color: #333;
@@ -217,12 +228,17 @@ $primary-l-style: none;
     @include navbar();
     &-toLeft {
       display: flex;
-      flex: 95%;
+      flex: $left-flex;
     }
     &-toRight {
       display: flex;
-      flex: 5%;
+      flex: $right-flex;
       #theme {
+        @extend %theme;
+        border: none;
+        background-color: #333;
+      }
+      #toggleOption {
         @extend %theme;
         border: none;
         background-color: #333;
@@ -257,12 +273,17 @@ $primary-l-style: none;
     @include navbar();
     &-toLeft {
       display: flex;
-      flex: 95%;
+      flex: $left-flex;
     }
     &-toRight {
       display: flex;
-      flex: 5%;
+      flex: $right-flex;
       #theme {
+        @extend %theme;
+        border: none;
+        background-color: #333;
+      }
+      #toggleOption {
         @extend %theme;
         border: none;
         background-color: #333;
@@ -290,12 +311,17 @@ $primary-l-style: none;
     @include navbar();
     &-toLeft {
       display: flex;
-      flex: 95%;
+      flex: $left-flex;
     }
     &-toRight {
       display: flex;
-      flex: 5%;
+      flex: $right-flex;
       #theme {
+        @extend %theme;
+        border: none;
+        background-color: #333;
+      }
+      #toggleOption {
         @extend %theme;
         border: none;
         background-color: #333;

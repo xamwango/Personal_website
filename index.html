@@ -16,6 +16,11 @@
       src="https://kit.fontawesome.com/406f972bb9.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .large-size {
+        font-size: 20px;
+      }
+    </style>
   </head>
   <body class="home-page-container">
     <!-- Header -->
@@ -34,6 +39,14 @@
         <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
       </div>
       <div class="home-page-container-navbar-toRight">
+        <!-- large font -->
+        <div>
+          <select name="toggleOption" id="toggleOption">
+            <option value="normal">Normal font size</option>
+            <option value="larger">Larger font size</option>
+          </select>
+        </div>
+        <!-- theme -->
         <div>
           <select name="theme" id="theme">
             <option value="default">Page Default</option>
@@ -120,6 +133,21 @@
 
     <!-- Script -->
     <script>
+      // large font
+      const toggleOption = document.querySelector("#toggleOption");
+
+      document.body.classList.add("medium-size");
+      console.log(document.body.classList);
+
+      toggleOption.addEventListener("change", (event) => {
+        if (event.target.value === "larger") {
+          console.log("font size 24px");
+          document.body.addEventListener("click", (event) => {
+            document.body.classList.toggle("large-size");
+          });
+        }
+      });
+      // theme
       const theme = document.querySelector("#theme");
       const headert = document.querySelector(".home-page-container-header");
       const header = document.querySelector(".home-page-container-navbar");
